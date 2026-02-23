@@ -116,9 +116,9 @@ body {
 }
 
 .projects {
-    padding: 15px;
     background: var(--color-bg-light);
     border-radius: 10px;
+    padding: 15px;
 }
 
 /* .project-btn{
@@ -132,7 +132,15 @@ body {
     background-color: var(--color-card-bg);
     color: var(--color-text-light) !important;
     clip-path: inset(10px 0 10px 0 round 20px 0 20px 0);
-    padding: 15px;
+}
+
+.carousel-item{
+    height: 60vh;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .footer {
@@ -167,7 +175,7 @@ ul a {
 .about,
 .skills-section,
 .projects {
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.26);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.151);
 }
 
 /* animations */
@@ -222,7 +230,7 @@ footer {
 
 .card:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+    /* box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); */
 }
 .btn-primary {
     transition: all 0.3s ease;
@@ -261,8 +269,12 @@ footer {
     }
 
     .projects {
-        padding: 40px;
+        padding: 30px;
     }
+
+    .carousel-item{
+    height: 100vh;
+}
     .footer {
         flex-direction: row;
         justify-content: space-between;
@@ -289,8 +301,10 @@ footer {
     .skill-items {
         flex: 0 0 23%;
     }
-
+    .carousel-item{
+     height: 100vh;
+}
     .projects {
-        padding: 60px 120px;
+        padding: 10px 60px;
     }
 }
