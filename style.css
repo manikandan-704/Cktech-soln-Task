@@ -23,7 +23,9 @@ body {
     padding-top: 80px;
 }
 
-.navbar {}
+.navbar {
+
+}
 
 .navbar-brand {
     color: var(--color-primary) !important;
@@ -31,17 +33,17 @@ body {
     font-weight: bolder;
 }
 
-.navbar .nav-link {
+.navbar .nav-item {
     color: var(--color-text-primary) !important;
     font-size: large;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-item:hover {
     background: rgb(207, 207, 207);
     border-radius: 10px;
 }
-
 .navbar-toggler {
     border: none !important;
     outline: none !important;
@@ -56,10 +58,9 @@ body {
 }
 
 .profile {
-    margin: 15px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
-    /* Mobile first */
     align-items: center;
     gap: 20px;
     padding: 15px;
@@ -162,7 +163,75 @@ ul a {
     text-decoration: none;
     color: var(--color-text-primary);
 }
+.profile,
+.about,
+.skills-section,
+.projects {
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.26);
+}
 
+/* animations */
+
+html {
+    scroll-behavior: smooth;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.profile,
+.about,
+.skills-section,
+.projects,
+footer {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile,
+.about,
+.skills-section,
+.projects {
+    animation: slideUp 0.8s ease-out;
+}
+.skill-items {
+    transition: all 0.3s ease;
+}
+
+.skill-items:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+}
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
 /* Tablet */
 @media (min-width: 768px) {
     .profile {
