@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Projects</a>
                         </li>
+                        <li>
+                            <button id="themeToggle" class="btn-themeToggle" >Light</button>
+                        </li>
                     </ul>
     </header><br>
 
@@ -176,9 +179,29 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script>
+     const toggleBtn = document.getElementById("themeToggle");
+    const html = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+        html.setAttribute("data-theme", savedTheme);
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        let currentTheme = html.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+            html.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        } else {
+            html.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        }
+    });
+    </script>
 </body>
 
 </html>
