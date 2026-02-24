@@ -8,6 +8,7 @@
     --color-text-light: #E2E8F0;
     --color-border: #334155;
 }
+
 [data-theme="dark"] {
     --color-primary: #6366F1;
     --color-secondary: #22D3EE;
@@ -21,6 +22,7 @@
 
     --color-border: #F1F5F9;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -33,9 +35,11 @@ body {
     padding-top: 70px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-.btn-themeToggle{
+
+.btn-themeToggle {
     margin-top: 5px;
 }
+
 .navbar-brand {
     color: var(--color-primary) !important;
     font-size: xx-large !important;
@@ -93,6 +97,7 @@ body {
     transition: transform 0.3s ease;
 
 }
+
 .profile img:hover {
     transform: scale(1.08);
 }
@@ -164,6 +169,61 @@ body {
     margin: 20px auto;
 }
 
+
+.contact {
+    padding: 40px 20px;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;  
+    gap: 20px;
+}
+
+.contact label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background-color: white;
+    color: var(--color-text-primary);
+}
+
+.contact textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact button {
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    opacity: 0.9;
+}
 .footer {
     display: flex;
     justify-content: space-between;
@@ -309,6 +369,24 @@ footer {
     .carousel {
         width: 80%;
     }
+   
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name email"
+            "message message"
+            "button button";
+    }
+
+    .name { grid-area: name; }
+    .email { grid-area: email; }
+    .message { grid-area: message; }
+    .button { grid-area: button; }
+
+    .contact button {
+        width: 250px;
+        margin: 0 auto;
+    }
 
     .footer {
         flex-direction: row;
@@ -339,6 +417,28 @@ footer {
 
     .carousel {
         width: 60%;
+    }
+     .contact {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 50px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name email"
+            "message button";
+        align-items: center;
+    }
+
+    .contact textarea {
+        min-height: 180px;
+    }
+
+    .contact button {
+        height: 100%;
+        width: 100%;
     }
 
     .projects {
