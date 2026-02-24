@@ -22,21 +22,18 @@ body {
     color: var(--color-text-light) !important;
     padding-top: 80px;
 }
-
-.navbar {
-
-}
-
 .navbar-brand {
     color: var(--color-primary) !important;
     font-size: xx-large !important;
     font-weight: bolder;
+    margin-left: 10px;
 }
 
 .navbar .nav-item {
     color: var(--color-text-primary) !important;
     font-size: large;
     font-weight: bold;
+    margin-right: 10px;
     transition: all 0.3s ease;
 }
 
@@ -44,6 +41,7 @@ body {
     background: rgb(207, 207, 207);
     border-radius: 10px;
 }
+
 .navbar-toggler {
     border: none !important;
     outline: none !important;
@@ -74,10 +72,16 @@ body {
 }
 
 .profile img {
-    max-width: 300px;
+    max-width: 180px;
     width: 100%;
-}
+    border-radius: 50%;
+    border: 5px solid var(--color-border);
+    transition: transform 0.3s ease;
 
+}
+.profile img:hover {
+    transform: scale(1.08);
+}
 
 .about {
     margin: 15px;
@@ -134,13 +138,16 @@ body {
     clip-path: inset(10px 0 10px 0 round 20px 0 20px 0);
 }
 
-.carousel-item{
-    height: 60vh;
+.carousel {
+    width: 95%;
+    margin: 30px auto;
 }
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.carousel img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
 .footer {
@@ -154,6 +161,8 @@ body {
     color: var(--color-primary);
     flex-direction: column;
     gap: 20px;
+    font-size: xx-large !important;
+    font-weight: bolder;
 }
 
 footer {
@@ -171,6 +180,7 @@ ul a {
     text-decoration: none;
     color: var(--color-text-primary);
 }
+
 .profile,
 .about,
 .skills-section,
@@ -183,10 +193,12 @@ ul a {
 html {
     scroll-behavior: smooth;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -199,11 +211,13 @@ html {
 footer {
     animation: fadeIn 1s ease-in-out;
 }
+
 @keyframes slideUp {
     from {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -216,6 +230,7 @@ footer {
 .projects {
     animation: slideUp 0.8s ease-out;
 }
+
 .skill-items {
     transition: all 0.3s ease;
 }
@@ -224,6 +239,7 @@ footer {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
 .card {
     transition: all 0.3s ease;
 }
@@ -232,6 +248,7 @@ footer {
     transform: scale(1.03);
     /* box-shadow: 0 0 20px rgba(79, 70, 229, 0.4); */
 }
+
 .btn-primary {
     transition: all 0.3s ease;
 }
@@ -240,6 +257,7 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
 }
+
 /* Tablet */
 @media (min-width: 768px) {
     .profile {
@@ -249,7 +267,8 @@ footer {
         padding: 30px;
     }
 
-    .text, .image {
+    .text,
+    .image {
         flex: 1;
     }
 
@@ -272,9 +291,10 @@ footer {
         padding: 30px;
     }
 
-    .carousel-item{
-    height: 100vh;
-}
+    .carousel {
+        width: 80%;
+    }
+
     .footer {
         flex-direction: row;
         justify-content: space-between;
@@ -301,9 +321,11 @@ footer {
     .skill-items {
         flex: 0 0 23%;
     }
-    .carousel-item{
-     height: 100vh;
-}
+
+    .carousel {
+        width: 60%;
+    }
+
     .projects {
         padding: 10px 60px;
     }
