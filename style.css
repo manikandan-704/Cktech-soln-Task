@@ -27,6 +27,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -113,12 +114,15 @@ body {
 .about h2 {
     color: var(--color-primary);
 }
+.about p{
+    padding: 0 10px;
+}
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
 }
 
 .skills-section {
@@ -132,10 +136,19 @@ body {
     background-color: var(--color-card-bg);
     color: var(--color-text-light);
     clip-path: inset(10px 0 10px 0 round 20px 0 20px 0);
-    min-width: 360px;
+    width: 100%;
+    max-width: 400px;
+    flex: 1 1 300px;
     min-height: 230px;
     border-radius: 8px;
     padding: 15px;
+}
+.skill-items h2{
+    margin-top: 5px;
+}
+
+.skill-items p{
+    padding: 0 20px;
 }
 
 .projects {
@@ -143,7 +156,6 @@ body {
     border-radius: 10px;
     padding: 15px;
 }
-
 /* .project-btn{
     background: var(--color-primary);
     color: var(--color-text-light);
@@ -154,9 +166,14 @@ body {
 .card-body {
     background-color: var(--color-card-bg);
     color: var(--color-text-light) !important;
-    clip-path: inset(10px 0 10px 0 round 20px 0 20px 0);
+    padding: 10px;
 }
-
+.card-text{
+    padding: 0 5px;
+}
+.certification h2{
+    color: var(--color-text-light);
+}
 .carousel {
     width: 95%;
     margin: 30px auto;
@@ -179,6 +196,7 @@ body {
 .contact h2 {
     text-align: center;
     margin-bottom: 30px;
+    color:var(--color-primary);
 }
 
 .contact form {
@@ -245,12 +263,12 @@ footer {
     margin-bottom: 0;
 }
 
-ul {
+ footer ul {
     display: flex;
     flex-direction: column;
 }
 
-ul a {
+footer ul a {
     text-decoration: none;
     color: var(--color-text-primary);
 }
