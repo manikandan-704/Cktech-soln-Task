@@ -15,34 +15,19 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg  fixed-top navbar-light bg-light">
-
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Portfolio</a>
-
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container-fluid"> <a class="navbar-brand" href="#">Portfolio</a> <button
+                    class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link  active" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li>
-                            <button id="themeToggle" class="btn-themeToggle">Light</button>
-                        </li>
+                        <li class="nav-item"> <a class="nav-link active" href="#">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Skills</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Projects</a> </li>
+                        <li> <button id="themeToggle" class="btn-themeToggle">Light</button> </li>
                     </ul>
     </header><br>
 
@@ -82,13 +67,9 @@
                 <h2 style="color:#4F46E5;">Skills</h2>
                 <div class="skills">
                     <div class="skill-items">
-                        <h6>Programming</h6>
-                        <p>Java, JavaScript, C</p>
-                        <p>Problem Solving, Version Control, Debugging, Clean Code Practices, Continuous Learning</p>
-                    </div>
-                    <div class="skill-items">
-                        <h6>Tools & Technologies</h6>
-                        <p>Git, GitHub, Visual Studio Code, Browser Developer Tools</p>
+                        <h6>Core concepts</h6>
+                        <p>Java, JavaScript, C, Problem Solving, Version Control, Debugging, Clean Code Practices,
+                            Continuous Learning</p>
                     </div>
                     <div class="skill-items">
                         <h6>Frontend Technologies</h6>
@@ -99,6 +80,10 @@
                         <h6>Backend Technologies</h6>
                         <p>Node.js (Basics), Express.js (Basics), MongoDB (Basics), REST API Fundamentals</p>
                     </div>
+                    <div class="skill-items">
+                        <h6>Tools & Technologies</h6>
+                        <p>Git, GitHub, Visual Studio Code, Browser Developer Tools, Postman</p>
+                    </div>
                 </div>
             </div>
         </section><br>
@@ -106,8 +91,8 @@
         <!-- Projects Section -->
 
         <section>
-            <div class="projects" style="margin: 15px; color:#4F46E5;">
-                <h2>Projects</h2>
+            <div class="projects">
+                <h2 style="color:#4F46E5; margin: 10px;">Projects</h2>
                 <div class="container my-5">
                     <div class="row">
 
@@ -208,25 +193,26 @@
             <div>
                 <ul>
                     <a href=""><i class="fa-solid fa-envelope"></i> Email</a>
-                    <a href=""><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/manikandan-704"><i class="fa-brands fa-github"></i> GitHub</a>
                     <a href=""><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </ul>
             </div>
-            <hr>
+        </div><br>
+        <hr style="color: black;">
+        <div class="footer-bottom">
+            <p>© 2026 Manikandan. All Rights Reserved.</p>
         </div>
 
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const toggleBtn = document.getElementById("themeToggle");
         const html = document.documentElement;
 
         // Load saved theme
-        const savedTheme = localStorage.getItem("theme");
-
-        if (savedTheme) {
-            html.setAttribute("data-theme", savedTheme);
-        }
+        const savedTheme = localStorage.getItem("theme") || "light";
+        html.setAttribute("data-theme", savedTheme);
+        toggleBtn.textContent = savedTheme === "dark" ? "Dark" : "Light";
 
         toggleBtn.addEventListener("click", () => {
             let currentTheme = html.getAttribute("data-theme");
@@ -234,12 +220,14 @@
             if (currentTheme === "dark") {
                 html.setAttribute("data-theme", "light");
                 localStorage.setItem("theme", "light");
+                toggleBtn.textContent = "Light";
             } else {
                 html.setAttribute("data-theme", "dark");
                 localStorage.setItem("theme", "dark");
+                toggleBtn.textContent = "Dark";
             }
-        });
-    </script>
+        });</script>
+
 </body>
 
 </html>
